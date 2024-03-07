@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hunting Phone API</title>
+    <!-- daisyUI cdn  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* *{
+    height: 100%;
+    margin: 0;
+        
+         
+    } */
+        body {
+            font-family: Arial, sans-serif;
+            /* background-color: #f4f4f4; */
+
+        }
+
+        .search-container {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 class="text-6xl text-red-500 text-opacity-80">Phone Hunter</h1>
+    </header>
+    <main>
+
+        <!-- search-container section  -->
+        <section class="my-0 lg:flex justify-center gap-5">
+            <div class="search-container ">
+                <input type="text" id="searchInput" placeholder="search...">
+                <button onclick="search()" class="btn btn-accent rounded-xl">Search</button>
+            </div>
+
+            <!-- <div class="search-container">
+                <input type="text" id="searchInput2" class="" placeholder="search...">
+                <button onclick="search2()" class="btn btn-error">Search</button>
+            </div> -->
+
+        </section>
+
+        <!-- loading-spinner section  -->
+        <section>
+            <div class="text-center my-8">
+                <span id="loading-spinner" class="loading loading-spinner text-primary  hidden"></span>
+            </div>
+        </section>
+
+        <!-- phone-container section  -->
+        <section>
+
+            <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2  gap-4 lg:grid-cols-3">
+
+            </div>
+
+        </section>
+        <section class="text-end mx-24">
+            <div id="show-all-item" class="hidden">
+                <button onclick="ShowAll()" class="btn btn-primary text-white">Show all </button>
+            </div>
+        </section>
+
+        <section>
+            <!-- Open the modal using ID.showModal() method -->
+            <!-- <button class="btn " onclick="show_details_modal.showModal()">open modal</button> -->
+            <dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle ">
+                <div id="show-details-modal" class="modal-box bg-sky-400 text-white">
+                    
+                    <h3 class="font-bold text-lg "></h3>
+                    <p class="py-4"></p>
+                    <div class="modal-action">
+                        <form method="dialog">
+                           
+                            <button class="btn">Close</button>
+                        </form>
+                    </div>
+                </div>
+            </dialog>
+        </section>
+
+    </main>
+    <footer>
+
+    </footer>
+
+    <!-- script  -->
+    <script src="script/phone.js"></script>
+
+</body>
+
+</html>
